@@ -18,6 +18,7 @@ const HeaderBanner: FC<HeaderBannerProps> = ({ }) => {
         className='relative flex flex-row gap-3 h-fit'
     >
         <BannerBg />
+        {/* text section */}
         <div className='w-full md:w-fit flex flex-col items-start justify-start px-4  py-8 gap-3 '>
             <div className='relative'>
                 <div
@@ -41,11 +42,13 @@ const HeaderBanner: FC<HeaderBannerProps> = ({ }) => {
             '>{content.name}</span>
             </div>
         </div>
+        {/* image and social 3d section */}
         <div className='hidden md:flex w-1/2 flex-1 h-full cursor-pointer'>
             <Spline
                 scene="https://prod.spline.design/8EkkD7ey7Xfz-M-O/scene.splinecode"
             />
         </div>
+
     </div >
 }
 
