@@ -1,17 +1,16 @@
-import type { Metadata } from "next";
-import { Platypi as FontSans } from "next/font/google";
-import { cn } from "@/lib/utils"
+import BodyContainer from "@/components/BodyContainer";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 
-const fontSans = FontSans({
-  subsets: ["vietnamese"],
-  variable: "--font-sans",
-});
-
 export const metadata: Metadata = {
-  title: "Dev-Hank",
+  title: "Portfolio | Nguyen Xuan Hanh",
   description: "My personal website",
+};
+export const viewport: Viewport = {
+  initialScale: 1.0,
+  width: "device-width",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -19,12 +18,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body className={cn(
-        "dark min-h-screen bg-background font-sans antialiased",
-        fontSans.variable
-      )}>{children}</body>
+      <BodyContainer>
+        {children}
+      </BodyContainer>
     </html>
   );
 }

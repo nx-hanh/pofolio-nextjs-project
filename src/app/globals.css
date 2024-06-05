@@ -36,7 +36,7 @@
   }
 
   .dark {
-    --background: 0 0% 0%; 
+    --background: 214 20% 7%;
     --foreground: 210 20% 98%;
 
     --card: 224 71.4% 4.1%;
@@ -73,4 +73,25 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+html * {
+  box-sizing: border-box;
+}
+
+.header-bg{
+  -webkit-clip-path: url(#my-clip-path);
+  clip-path: url(#my-clip-path);
+}
+.logo-background{
+  clip-path: url(#logo-background-clip-path);
+}
+.banner-background{
+  clip-path: url(#banner-background-clip-path);
+  filter: blur(70px);
+}
+.cta-left-background{
+  clip-path: url(#cta-left-background-clip-path);
+}
+.cta-right-background{
+  clip-path: url(#cta-right-background-clip-path);
 }
