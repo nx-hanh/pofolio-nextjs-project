@@ -15,6 +15,7 @@ const BannerBg: FC<BannerBgProps> = ({ }) => {
         </svg>
         <div className="absolute top-6 right-1/4 bg-[#1D6750] w-1/3 h-1/3 rounded-full"></div>
         <div className="absolute bottom-4 right-4 bg-[#915DFF] w-1/4 h-1/3 rounded-full"></div>
+        <div className="absolute bottom-4 left-4 bg-[#1371A7] w-1/4 h-1/3 rounded-full"></div>
 
     </div>
 }

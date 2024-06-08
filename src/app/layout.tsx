@@ -1,6 +1,7 @@
 import BodyContainer from "@/components/BodyContainer";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <BodyContainer>
         {children}
+        <SpeedInsights/>
       </BodyContainer>
     </html>
   );
