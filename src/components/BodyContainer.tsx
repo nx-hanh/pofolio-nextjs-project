@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import Header from "@/components/common/header/Header";
 import React, { useEffect, useState } from "react";
 import DarkModeToggle from "@/components/common/DarkModeToggle";
+import { Toaster } from "@/components/ui/toaster";
 
 const fontSans = FontSans({
     subsets: ["vietnamese"],
@@ -44,6 +45,7 @@ export default function BodyContainer({
             isDarkMode && "dark" // dark mode
         )}>
             {children}
+            <Toaster />
             <div className="fixed w-screen h-svh top-0 left-0 p-10 flex justify-between items-end
                 pointer-events-none z-[1000]
             ">

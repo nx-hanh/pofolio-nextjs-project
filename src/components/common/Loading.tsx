@@ -1,13 +1,21 @@
 import React, { FC } from 'react'
 
 interface LoadingProps {
-
+    size?: 'sm' | 'md' | 'lg'
 }
 
-const Loading: FC<LoadingProps> = ({ }) => {
+const Loading: FC<LoadingProps> = ({
+    size = 'md'
+}) => {
+    const classSize = {
+        'sm': 'w-8 h-8',
+        'md': 'w-16 h-16',
+        'lg': 'w-24 h-24',
+    }
+
     return <div className='w-full h-full flex justify-center items-center'>
         <div
-            className='relative w-16 h-16 rounded-[50%]            '
+            className={`${classSize[size]} relative rounded-[50%]`}
             style={{
                 perspective: '800px',
             }}

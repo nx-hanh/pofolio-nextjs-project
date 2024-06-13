@@ -25,8 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <BodyContainer>
         {children}
-        <Analytics/>
-        <SpeedInsights/>
+        <Analytics />
+        <SpeedInsights />
       </BodyContainer>
     </html>
   );

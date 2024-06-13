@@ -1,5 +1,5 @@
 'use client'
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,6 +9,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { CircleChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
+import { useToast } from '@/components/ui/use-toast';
+import Loading from '@/components/common/Loading';
 
 interface ContactProps {
 
@@ -28,6 +31,8 @@ const formSchema = z.object({
 })
 const Contact: FC<ContactProps> = ({ }) => {
     const tags = ['Hiring', 'Freelance', 'Collaboration', 'Consultation'];
+    const [loading, setLoading] = useState(false);
+    const { toast } = useToast();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -38,9 +43,33 @@ const Contact: FC<ContactProps> = ({ }) => {
         },
     });
     function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
-        console.log(values)
+        setLoading(true);
+        emailjs.send("service_geyhk0j", "template_13jzczf", {
+            name: values.name,
+            message: values.message,
+            interest: values.tag,
+            reply_to: values.email
+        }, {
+            publicKey: 'gA0eQbf9dGxoOxCt-',
+        }).then(
+            () => {
+                toast({
+                    variant: 'default',
+                    title: 'Thank you!',
+                    description: 'I will get back to you as soon as possible.',
+                });
+                setLoading(false);
+                form.reset();
+            },
+            (error) => {
+                toast({
+                    variant: "destructive",
+                    title: "Uh oh! Something went wrong.",
+                    description: "This is likely a server error. You can try again later or contact me directly at hanhxuan1804@gmail.com",
+                });
+                setLoading(false);
+            },
+        );
     }
     return <div
         id='contact'
@@ -139,10 +168,17 @@ const Contact: FC<ContactProps> = ({ }) => {
                     >
                         <Button
                             type='submit'
+                            disabled={loading}
                             className='flex items-center gap-2 px-3 py-2 md:px-12 md:py-4 rounded-[16px] w-full h-full dark:bg-[#0e1f2d] bg-gray-100 dark:text-blueOne text-[#82E0F9] hover:bg-transparent hover:text-black font-semibold dark:hover:bg-transparent dark:hover:text-black'
                         >
-                            <span>Submit</span>
-                            <CircleChevronRight size={24} />
+                            {loading ?
+                                <div className='w-[83px] h-[24px]' >
+                                    <Loading size='sm' />
+                                </div> : <>
+                                    <span>Submit</span>
+                                    <CircleChevronRight size={24} />
+                                </>
+                            }
                         </Button>
                     </div>
                 </form>
