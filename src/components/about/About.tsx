@@ -1,21 +1,29 @@
 'use client'
-import React, { FC } from 'react'
-import Spline from '@splinetool/react-spline'
+import React, { FC, Suspense, useState } from 'react'
 import { SquareArrowOutUpRight } from 'lucide-react'
+import Loading from '@/components/common/Loading'
+const Spline = React.lazy(() => import('@splinetool/react-spline'))
 interface AboutProps {
 
 }
 
 const About: FC<AboutProps> = ({ }) => {
+    const [loading, setLoading] = useState<boolean>(true)
     const content = [
         'I am a software engineer based in the Vietnam.',
         "I specialize in building exceptional websites and applications. Currently focused on web development, I'm eager to work with a talented team. Passionate about new technologies, I'm a fast learner and a team player ready for new challenges. Seeking a full-time software engineer position. Interested in collaborating? Reach out!"
     ]
     const resume = 'link to resume'
-    return <div className="w-full h-fit flex flex-row justify-center items-center">
+    return <div id='about'
+        className="w-full h-fit flex flex-row justify-center items-center">
         <div className="relative w-full md:w-1/2 h-full flex flex-col justify-center items-center">
+            {loading &&
+                <div className='w-1/2 h-full absolute top-0 right-0'>
+                    <Loading />
+                </div>}
             <Spline
                 scene="https://prod.spline.design/1Oy2-jHxkrewulmF/scene.splinecode"
+                onLoad={() => setLoading(false)}
             />
         </div>
         <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-start px-6">

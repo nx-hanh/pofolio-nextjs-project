@@ -1,12 +1,13 @@
-import React, { FC } from 'react'
-import Spline from '@splinetool/react-spline'
+import React, { FC, Suspense } from 'react'
+const Spline = React.lazy(() => import('@splinetool/react-spline'))
+import Loading from '@/components/common/Loading'
 
 interface SkillProps {
 
 }
 
 const Skill: FC<SkillProps> = ({ }) => {
-    return <div className="w-full min-h-[400px] flex flex-col justify-center items-center">
+    return <div className="w-full min-h-[4[00px] flex flex-col justify-center items-center">
         <div className="w-full flex justify-center items-center mt-4 mb-6"            >
             <div
                 className='text-4xl md:text-7xl font-semibold 
@@ -17,9 +18,11 @@ const Skill: FC<SkillProps> = ({ }) => {
                 <p>MY SKILLS</p>
             </div>
         </div>
-        <Spline
-            scene="https://prod.spline.design/sb9tBNCHlFG42tXi/scene.splinecode"
-        />
+        <Suspense fallback={<Loading />}>
+            <Spline
+                scene="https://prod.spline.design/sb9tBNCHlFG42tXi/scene.splinecode"
+            />
+        </Suspense>
     </div>
 }
 

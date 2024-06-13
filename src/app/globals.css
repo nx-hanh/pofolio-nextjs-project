@@ -76,22 +76,49 @@
 }
 html * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-.header-bg{
+.header-bg {
   -webkit-clip-path: url(#my-clip-path);
   clip-path: url(#my-clip-path);
 }
-.logo-background{
+.logo-background {
   clip-path: url(#logo-background-clip-path);
 }
-.banner-background{
+.banner-background {
   clip-path: url(#banner-background-clip-path);
   filter: blur(70px);
 }
-.cta-left-background{
+.cta-left-background {
   clip-path: url(#cta-left-background-clip-path);
 }
-.cta-right-background{
+.cta-right-background {
   clip-path: url(#cta-right-background-clip-path);
+}
+.exp-card-background {
+  clip-path: url(#exp-card-background-clip-path);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cusor: pointer;
 }

@@ -11,6 +11,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ }) => {
     return <header
+        id='header'
         className='relative pt-2'
     >
         {/* navbar */}

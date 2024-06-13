@@ -106,6 +106,39 @@ const config = {
             opacity: "0",
           },
         },
+        move: {
+          0: {
+            left : "0",
+            opacity: "0",
+          },
+          35: {
+            left: "41%",
+            transform: "rotate(0deg)",
+            opacity: "1",
+          },
+          65: {
+            left: "59%",
+            transform: "rotate(0deg)",
+            opacity: "1",
+          },
+          100: {
+            left: "100%",
+            transform: "rotate(720deg)",
+            opacity: "0",
+          },
+        },
+        "loading-rotate-one": {
+          "0%": { transform: "rotateX(35deg) rotateY(-45deg) rotateZ(0deg)" },
+          "100%": { transform: "rotateX(35deg) rotateY(-45deg) rotateZ(360deg)" },
+        },
+        "loading-rotate-two": {
+          "0%": { transform: "rotateX(50deg) rotateY(10deg) rotateZ(0deg)" },
+          "100%": { transform: "rotateX(50deg) rotateY(10deg) rotateZ(360deg)" },
+        },
+        "loading-rotate-three": {
+          "0%": { transform: "rotateX(35deg) rotateY(55deg) rotateZ(0deg)" },
+          "100%": { transform: "rotateX(35deg) rotateY(55deg) rotateZ(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -115,6 +148,10 @@ const config = {
         typewriter: "typewriter 2s steps(11) forwards",
         caret:
           "typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s",
+        loading: "move 2s linear infinite",
+        "loading-rotate-one": "loading-rotate-one 1s linear infinite",
+        "loading-rotate-two": "loading-rotate-two 1s linear infinite",
+        "loading-rotate-three": "loading-rotate-three 1s linear infinite",
       },
     },
   },
