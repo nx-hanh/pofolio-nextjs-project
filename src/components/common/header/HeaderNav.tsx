@@ -4,6 +4,9 @@ import Image from 'next/image'
 import LogoBg from '@/components/common/header/clip_path_bg/LogoBg'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { Menu } from 'lucide-react'
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { NavItems } from '@/lib/config'
 
 interface HeaderNavProps {
 
@@ -16,7 +19,7 @@ const HeaderNav: FC<HeaderNavProps> = ({ }) => {
     >
         <div className="flex h-full gap-3">
             {/* logo */}
-            <div className='relative w-40 h-24 *:
+            <div className='relative w-28 h-16 lg:w-40 lg:h-24 *:
                 cursor-pointer 
             '
                 onClick={() => navigate.push('/')}
@@ -43,6 +46,28 @@ const HeaderNav: FC<HeaderNavProps> = ({ }) => {
                 Contact
             </Link>
         </div>
+        <Sheet
+        >
+            <SheetTrigger
+                className='md:hidden mb-4'
+            >
+                <Menu size={32} />
+            </SheetTrigger>
+            <SheetContent>
+                {NavItems.map((item, index) => (
+                    <SheetClose asChild
+                        key={index}
+                        className='w-full h-12 flex justify-center items-center'
+                    >
+                        <Link href={item.href}
+                            className='text-2xl font-thin'
+                        >
+                            {item.name}
+                        </Link>
+                    </SheetClose>
+                ))}
+            </SheetContent>
+        </Sheet>
     </div>
 }
 

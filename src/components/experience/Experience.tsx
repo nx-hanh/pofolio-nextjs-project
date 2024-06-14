@@ -37,7 +37,7 @@ const Experience: FC<ExperienceProps> = ({ }) => {
             }
             {/* line background */}
             <div
-                className='absolute top-0 left-0 w-full h-full justify-center items-center flex -z-10'
+                className='absolute top-0 left-0 w-full h-full justify-end px-8  lg:justify-center items-center flex -z-10'
             >
                 <div
                     className='relative w-[3px] h-full bg-foreground'

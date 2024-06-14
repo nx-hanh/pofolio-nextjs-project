@@ -15,7 +15,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 }) => {
     const notReady = project.link === '';
     return <div
-        className='relative min-w-[400px] max-w-[400px] h-[400px] p-[1px] rounded-xl
+        className='relative min-w-full max-w-full lg:min-w-[400px] lg:max-w-[400px] h-[400px] p-[1px] rounded-xl
     bg-gradient-to-br from-green-400 via-blueTwo to-blue-500
     '
     >

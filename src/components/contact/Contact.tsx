@@ -75,7 +75,7 @@ const Contact: FC<ContactProps> = ({ }) => {
         id='contact'
         className='w-full h-full flex flex-col justify-center items-center mt-8'
     >
-        <div className="w-full flex justify-start items-center my-4">
+        <div className="w-full flex justify-start items-center mt-4 lg:mb-4">
             <div
                 className='text-4xl md:text-6xl font-semibold h-20
                            bg-gradient-to-r bg-clip-text  text-transparent 
@@ -163,7 +163,7 @@ const Contact: FC<ContactProps> = ({ }) => {
                         )}
                     />
                     <div
-                        className='p-[1.5px] rounded-[16px] mb-2 mt-4 flex justify-center items-center
+                        className='w-full lg:w-auto p-[1.5px] rounded-[16px] mb-2 mt-4 flex justify-center items-center
                     bg-gradient-to-r from-[#82E0F9] via-[#8CEED6] to-[#93FABA] '
                     >
                         <Button

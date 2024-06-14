@@ -21,7 +21,7 @@ const Header: FC<HeaderProps> = ({ }) => {
         {/* cta */}
         <HeaderCTA />
         {/* dev 3d icon */}
-        <div className='w-full md:w-2/3 h-full absolute -top-1 -right-8 xl:top-0 xl:right-0 pointer-events-none'>
+        <div className='w-full lg:w-2/3 h-1/2 lg:h-full absolute top-[40%] right-0 xl:top-0 xl:right-0 pointer-events-none'>
             {/* using spline scene */}
             <Spline
                 scene="https://prod.spline.design/pKRClpK50GB4yH6d/scene.splinecode"

@@ -40,13 +40,13 @@ export default function BodyContainer({
     }, []);
     return (
         <body className={cn(
-            "relative min-h-svh w-screen bg-background font-sans antialiased flex flex-col container overflow-x-hidden overflow-y-scroll",
+            "relative min-h-svh w-screen bg-background font-sans antialiased flex flex-col lg:container overflow-x-hidden overflow-y-scroll",
             fontSans.variable,
             isDarkMode && "dark" // dark mode
         )}>
             {children}
             <Toaster />
-            <div className="fixed w-screen h-svh top-0 left-0 p-10 flex justify-between items-end
+            <div className="fixed w-screen h-svh bottom-0 left-0 p-5 lg:p-10 flex justify-between items-end
                 pointer-events-none z-[1000]
             ">
                 <div

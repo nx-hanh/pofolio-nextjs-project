@@ -39,7 +39,7 @@ const Skill: FC<SkillProps> = ({ }) => {
     }
     return <div
         id="skills"
-        className="w-full min-h-[4[00px] flex flex-col justify-center items-center">
+        className="w-full min-h-[4[00px] flex flex-col justify-center items-center mb-16 lg:mb-0">
         <div className="w-full flex justify-center items-center mt-4 mb-6"            >
             <div
                 className='text-4xl md:text-7xl font-semibold 
@@ -50,7 +50,7 @@ const Skill: FC<SkillProps> = ({ }) => {
                 <p>SKILLS</p>
             </div>
         </div>
-        <div className='relative w-full h-svh flex flex-col justify-center items-center'>
+        <div className='relative w-full h-[200px] lg:h-svh flex flex-col justify-center items-center'>
             {loading &&
                 <div className='w-full h-full absolute top-0 right-0'>
                     <Loading />
@@ -61,7 +61,7 @@ const Skill: FC<SkillProps> = ({ }) => {
                 onMouseHover={onMouseHover}
             />
             <div
-                className='absolute top-[150px] mx-auto w-[220px] px-2 h-[70px] border-[1.5px] rounded-lg border-blueOne  flex justify-center items-center text-sm text-center text-blueOne font-semibold pointer-events-none'
+                className='absolute top-[100%] lg:top-[150px] mx-auto w-[220px] px-2 h-[70px] lg:border-[1.5px] rounded-lg border-blueOne  flex justify-center items-center text-sm text-center text-blueOne font-semibold pointer-events-none'
             >
                 {conversation}
             </div>

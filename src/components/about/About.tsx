@@ -16,8 +16,8 @@ const About: FC<AboutProps> = ({ }) => {
     ]
     const resume = CV_LINK;
     return <div id='about'
-        className="w-full h-fit flex flex-row justify-center items-center">
-        <div className="relative w-full md:w-1/2 h-full flex flex-col justify-center items-center">
+        className="w-full h-fit flex flex-col lg:flex-row justify-center items-center">
+        <div className="relative w-full h-[200px] lg:w-1/2 lg:h-full flex flex-col justify-center items-center">
             {loading &&
                 <div className='w-full h-full absolute top-0 right-0'>
                     <Loading />
@@ -27,8 +27,8 @@ const About: FC<AboutProps> = ({ }) => {
                 onLoad={() => setLoading(false)}
             />
         </div>
-        <div className="w-full md:w-1/2 h-full flex flex-col justify-center items-start px-6">
-            <div className="w-full flex justify-center items-center mt-4 mb-6">
+        <div className="w-full lg:w-1/2 h-full flex flex-col justify-center items-start lg:px-6">
+            <div className="w-full flex justify-center items-center mt-4 mb-2 lg:mb-6">
                 <div
                     className='text-4xl md:text-7xl font-semibold 
             bg-gradient-to-r bg-clip-text  text-transparent 
@@ -39,7 +39,7 @@ const About: FC<AboutProps> = ({ }) => {
                 </div>
             </div>
             {content.map((item, index) => (
-                <p key={index} className="text-md md:text-xl font-extralight mt-4">{item}</p>
+                <p key={index} className="text-sm lg:text-xl font-extralight mt-4 text-justify">{item}</p>
             ))}
             <div className="w-full flex justify-center items-center mt-8"            >
                 <div className='flex justify-center items-center cursor-pointer hover:animate-bounce transition-all duration-300 ease-in-out'
