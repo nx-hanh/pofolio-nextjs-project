@@ -1,13 +1,45 @@
-import React, { FC, Suspense } from 'react'
+'use client';
+import React, { FC, useState } from 'react'
 const Spline = React.lazy(() => import('@splinetool/react-spline'))
 import Loading from '@/components/common/Loading'
+import { Application } from '@splinetool/runtime';
+import { SplineEvent } from '@splinetool/react-spline';
 
 interface SkillProps {
 
 }
 
 const Skill: FC<SkillProps> = ({ }) => {
-    return <div className="w-full min-h-[4[00px] flex flex-col justify-center items-center">
+    const [loading, setLoading] = useState<boolean>(true);
+    const [conversation, setConversation] = useState<string>('')
+    const conversationMap: { [key: string]: string } = {
+        "Html": "Who doesn't know HTML? It's the web's foundation.",
+        "Css": "What web developer doesn't know CSS? Essential skill.",
+        "Javascript": "Javascript, the language of the web. I love it.",
+        "Typescript": "Typescript is Javascript with superpowers. I love it.",
+        "React": "React, I'm very confident with it.",
+        "TailwindCSS": "TailwindCSS, I love it. Simple and powerful.",
+        "NodeJS": "NodeJS, especially with Express. I love it.",
+        "MongoDB": "MongoDB, NoSQL database. Most of my projects use it.",
+        "SQLServer": "SQLServer, I love it.",
+        "Git": "Git, can't do without it.",
+        "CSharp": "CSharp, I love it.",
+        "Redux": "Redux, state management for React. I love it.",
+        "Slack": "Slack, I can work with it.",
+        "ReactNative": "React Native, just started learning it.",
+    }
+
+
+    const onLoad = (e: Application) => {
+        setLoading(false)
+    }
+    const onMouseHover = (e: SplineEvent) => {
+        const text = conversationMap[e.target.name];
+        setConversation(text)
+    }
+    return <div
+        id="skills"
+        className="w-full min-h-[4[00px] flex flex-col justify-center items-center">
         <div className="w-full flex justify-center items-center mt-4 mb-6"            >
             <div
                 className='text-4xl md:text-7xl font-semibold 
@@ -15,15 +47,26 @@ const Skill: FC<SkillProps> = ({ }) => {
             from-green-400 via-blueTwo to-blue-500
             animate-text'
             >
-                <p>MY SKILLS</p>
+                <p>SKILLS</p>
             </div>
         </div>
-        <Suspense fallback={<Loading />}>
+        <div className='relative w-full h-svh flex flex-col justify-center items-center'>
+            {loading &&
+                <div className='w-full h-full absolute top-0 right-0'>
+                    <Loading />
+                </div>}
             <Spline
                 scene="https://prod.spline.design/sb9tBNCHlFG42tXi/scene.splinecode"
+                onLoad={onLoad}
+                onMouseHover={onMouseHover}
             />
-        </Suspense>
-    </div>
+            <div
+                className='absolute top-[150px] mx-auto w-[220px] px-2 h-[70px] border-[1.5px] rounded-lg border-blueOne  flex justify-center items-center text-sm text-center text-blueOne font-semibold pointer-events-none'
+            >
+                {conversation}
+            </div>
+        </div>
+    </div >
 }
 
 export default Skill

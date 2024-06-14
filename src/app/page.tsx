@@ -14,7 +14,7 @@ export default function Home() {
       {/* about */}
       <About />
       {/* skills */}
-      {/* <Skill /> */}
+      <Skill />
       {/* experience */}
       <Experience />
       {/* project */}

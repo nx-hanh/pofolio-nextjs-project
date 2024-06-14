@@ -62,7 +62,8 @@ const ProjectsValue = {
     {
       name: "Ecommerce API",
       type: "Web",
-      image: "https://i.ibb.co/b2mfrv3/photo-1674027001840-1a3e834eb73f-q-80-w-1932-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+      image:
+        "https://i.ibb.co/b2mfrv3/photo-1674027001840-1a3e834eb73f-q-80-w-1932-auto-format-fit-crop-ixlib-rb-4-0.jpg",
       description:
         "A simple ecommerce API, you can create, update, delete products and orders. I will add more features and the frontend soon.",
       link: "",
@@ -82,7 +83,8 @@ const ProjectsValue = {
     {
       name: "Batch Rename",
       type: "Desktop",
-      image: "https://i.ibb.co/svknmqf/premium-photo-1677402408071-232d1c3c3787-q-80-w-1780-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+      image:
+        "https://i.ibb.co/svknmqf/premium-photo-1677402408071-232d1c3c3787-q-80-w-1780-auto-format-fit-crop-ixlib-rb-4-0.jpg",
       description:
         "A window rename tool to help you rename multiple files or folders at once.",
       link: "",
@@ -92,7 +94,8 @@ const ProjectsValue = {
     {
       name: "CourseMinder",
       type: "Desktop",
-      image: "https://i.ibb.co/SnSgshH/photo-1546410531-bb4caa6b424d-q-80-w-1771-auto-format-fit-crop-ixlib-rb-4-0.jpg",
+      image:
+        "https://i.ibb.co/SnSgshH/photo-1546410531-bb4caa6b424d-q-80-w-1771-auto-format-fit-crop-ixlib-rb-4-0.jpg",
       description:
         "A window application to help Teachers manage their courses and students, Students can check in their courses and see their schedule.",
       link: "",
@@ -102,4 +105,6 @@ const ProjectsValue = {
   ],
 };
 
-export { CareerPathValue, ProjectsValue };
+const CV_LINK = "";
+
+export { CareerPathValue, ProjectsValue, CV_LINK };

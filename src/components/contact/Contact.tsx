@@ -169,7 +169,7 @@ const Contact: FC<ContactProps> = ({ }) => {
                         <Button
                             type='submit'
                             disabled={loading}
-                            className='flex items-center gap-2 px-3 py-2 md:px-12 md:py-4 rounded-[16px] w-full h-full dark:bg-[#0e1f2d] bg-gray-100 dark:text-blueOne text-[#82E0F9] hover:bg-transparent hover:text-black font-semibold dark:hover:bg-transparent dark:hover:text-black'
+                            className='flex items-center gap-2 px-3 py-2 md:px-12 md:py-4 rounded-[16px] w-full h-full dark:bg-[#0e1f2d] bg-white dark:text-blueOne text-[#82E0F9] hover:bg-transparent hover:text-black font-semibold dark:hover:bg-transparent dark:hover:text-black'
                         >
                             {loading ?
                                 <div className='w-[83px] h-[24px]' >
