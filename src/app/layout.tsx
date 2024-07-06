@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 export const metadata: Metadata = {
   title: "Portfolio | Nguyen Xuan Hanh",
@@ -20,14 +20,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
-      <BodyContainer>
-        {children}
-        <Analytics />
-        <SpeedInsights />
-      </BodyContainer>
+      <TooltipProvider>
+        <BodyContainer>
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </BodyContainer>
+      </TooltipProvider>
     </html>
   );
 }
