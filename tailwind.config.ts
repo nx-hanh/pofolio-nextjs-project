@@ -108,7 +108,7 @@ const config = {
         },
         move: {
           0: {
-            left : "0",
+            left: "0",
             opacity: "0",
           },
           35: {
@@ -129,15 +129,21 @@ const config = {
         },
         "loading-rotate-one": {
           "0%": { transform: "rotateX(35deg) rotateY(-45deg) rotateZ(0deg)" },
-          "100%": { transform: "rotateX(35deg) rotateY(-45deg) rotateZ(360deg)" },
+          "100%": {
+            transform: "rotateX(35deg) rotateY(-45deg) rotateZ(360deg)",
+          },
         },
         "loading-rotate-two": {
           "0%": { transform: "rotateX(50deg) rotateY(10deg) rotateZ(0deg)" },
-          "100%": { transform: "rotateX(50deg) rotateY(10deg) rotateZ(360deg)" },
+          "100%": {
+            transform: "rotateX(50deg) rotateY(10deg) rotateZ(360deg)",
+          },
         },
         "loading-rotate-three": {
           "0%": { transform: "rotateX(35deg) rotateY(55deg) rotateZ(0deg)" },
-          "100%": { transform: "rotateX(35deg) rotateY(55deg) rotateZ(360deg)" },
+          "100%": {
+            transform: "rotateX(35deg) rotateY(55deg) rotateZ(360deg)",
+          },
         },
       },
       animation: {
@@ -153,6 +159,9 @@ const config = {
         "loading-rotate-two": "loading-rotate-two 1s linear infinite",
         "loading-rotate-three": "loading-rotate-three 1s linear infinite",
       },
+    },
+    gridTemplateColumns: {
+      projectTable: "auto 1fr 20px auto",
     },
   },
   plugins: [require("tailwindcss-animate")],
