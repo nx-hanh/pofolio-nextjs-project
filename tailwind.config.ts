@@ -159,9 +159,9 @@ const config = {
         "loading-rotate-two": "loading-rotate-two 1s linear infinite",
         "loading-rotate-three": "loading-rotate-three 1s linear infinite",
       },
-    },
-    gridTemplateColumns: {
-      projectTable: "auto 1fr 20px auto",
+      gridTemplateColumns: {
+        projectTable: "auto 1fr 20px auto",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
