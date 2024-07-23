@@ -105,12 +105,13 @@ const ProjectsValue = {
   ],
 };
 
-const CV_LINK = "https://drive.google.com/file/d/1i2eUqZm8aqLbq9W0zVfrfQjDBPsKAUnC/view?usp=sharing";
+const CV_LINK =
+  "https://drive.google.com/file/d/1i2eUqZm8aqLbq9W0zVfrfQjDBPsKAUnC/view?usp=sharing";
 const NavItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Experiences", href: "#experience" },
-  { name: "Projects", href: "#projects" },
+  { name: "Projects", href: "/projects" },
 ];
 
-export { CareerPathValue, ProjectsValue, CV_LINK, NavItems};
+export { CareerPathValue, ProjectsValue, CV_LINK, NavItems };

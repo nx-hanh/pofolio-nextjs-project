@@ -29,3 +29,32 @@ export const getProject = async (id: string) => {
     return {} as Project;
   }
 };
+
+export const createProject = async (project: Project) => {
+  try {
+    const client = await clientPromise;
+    const db = client.db(DATABASE);
+    const result = await db.collection(COLLECTION).insertOne(project);
+    return result.insertedId;
+  } catch (error) {
+    console.error(error);
+    return "";
+  }
+};
+export const createProjects = async (projects: Project[]) => {
+  try {
+    const client = await clientPromise;
+    const db = client.db(DATABASE);
+    const projectsDb = await db.collection(COLLECTION).find({}).toArray();
+    const projectsNotInDb = projects.filter(
+      (project) =>
+        !projectsDb.find((projectDb) => projectDb.name === project.name)
+    );
+    console.log(projectsNotInDb);
+    const result = await db.collection(COLLECTION).insertMany(projectsNotInDb);
+    return result.insertedIds;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};

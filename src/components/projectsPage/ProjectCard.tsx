@@ -21,7 +21,7 @@ interface ProjectCardProps {
 
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
-    <article className="size-[400px]">
+    <article className="w-[400px] h-fit mb-10">
       <Card>
         <CardHeader>
           <Image
@@ -41,11 +41,13 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
             label="Github"
             href={project.link.github}
             icon={<GithubIcon size={24} />}
+            disabled={project.link.github === ""}
           />
           <ActionButton
             label="Demo"
             href={project.link.deploy}
             icon={<ScreenShareIcon size={24} />}
+            disabled={project.link.deploy === ""}
           />
           <ActionButton
             label="Details"

@@ -115,7 +115,7 @@ const ProjectDataTable: FC<ProjectDataTableProps> = ({ project }) => {
                     src={image}
                     alt="Image"
                     fill
-                    className="rounded-md object-cover shadow-xl bg-transparent"
+                    className="rounded-md object-contain shadow-xl bg-transparent"
                   />
                 </AspectRatio>
               </CarouselItem>
