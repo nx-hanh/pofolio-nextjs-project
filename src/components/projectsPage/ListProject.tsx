@@ -1,4 +1,5 @@
 "use client";
+import Loading from "@/app/loading";
 import ProjectCard from "@/components/projectsPage/ProjectCard";
 import React, { FC } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
@@ -8,6 +9,7 @@ interface ListProjectProps {
 }
 
 const ListProject: FC<ListProjectProps> = ({ projects }) => {
+  if (typeof window === "undefined") return <Loading />;
   return (
     <section>
       <ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 850: 2, 1250: 3 }}>
