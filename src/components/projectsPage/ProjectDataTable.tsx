@@ -112,6 +112,7 @@ const ProjectDataTable: FC<ProjectDataTableProps> = ({ project }) => {
               <CarouselItem key={index} className="w-[400px] sm:w-[450px]">
                 <AspectRatio ratio={16 / 9}>
                   <Image
+                    unoptimized
                     src={image}
                     alt="Image"
                     fill

@@ -25,6 +25,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
       <Card>
         <CardHeader>
           <Image
+            unoptimized
             src={project.images[0]}
             alt={project.name}
             width={400}
