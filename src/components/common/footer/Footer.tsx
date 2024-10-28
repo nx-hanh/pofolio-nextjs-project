@@ -22,7 +22,7 @@ const Footer: FC<FooterProps> = ({ }) => {
                 width={32}
                 height={32}
                 className='cursor-pointer dark:invert'
-                onClick={() => window.open("https://github.com/hanhxuan1804", "_blank")}
+                onClick={() => window.open("https://github.com/nx-hanh", "_blank")}
             />
             <Image
                 src='/linkedin.svg'
