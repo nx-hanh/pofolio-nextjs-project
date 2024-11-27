@@ -122,4 +122,29 @@ const NavItems = [
   { name: "Projects", href: "/projects" },
 ];
 
-export { CareerPathValue, ProjectsValue, CV_LINK, NavItems };
+const GIST_ID = "d717b4db92be677b44cded7b422b0e3c";
+const GIST_FILENAME = "nx-hanh.json";
+
+/*
+ * Reads the JSON file inside of the gist
+ */
+export async function getUserData() {
+  const req = await fetch(`https://api.github.com/gists/${GIST_ID}`);
+  const gist = await req.json();
+  return JSON.parse(gist.files[GIST_FILENAME].content);
+}
+
+const NXH = {
+  data: {} as Profile,
+  async init() {
+    this.data = await getUserData();
+    return this;
+  },
+};
+
+// Initialize immediately using an IIFE (Immediately Invoked Function Expression)
+void (async () => {
+  await NXH.init();
+})();
+
+export { CareerPathValue, ProjectsValue, CV_LINK, NavItems, NXH };

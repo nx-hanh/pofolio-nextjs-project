@@ -1,6 +1,7 @@
 import ListProject from "@/components/projectsPage/ListProject";
 import TopTitle from "@/components/projectsPage/TopTitle";
 import { getProjects } from "@/lib/actions/project.actions";
+import { NXH } from "@/lib/config";
 import { HomeIcon } from "lucide-react";
 import React, { FC } from "react";
 
